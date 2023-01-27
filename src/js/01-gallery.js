@@ -21,16 +21,6 @@ const makeGallery = galleryItems.map(makeGalleryMarkup).join('');
 //  Додавання розмітки у список
 gallery.insertAdjacentHTML('afterbegin', makeGallery);
 
-// додавання слухача події по кліку на галерею
-gallery.addEventListener('click', onGalleryClick);
-
-// Створення колбек-функції для слухача події
-function onGalleryClick(e) {
-  e.preventDefault();
-  if (e.target.nodeName !== 'IMG') {
-    return;
-  }
-}
 // Створення самого лайтбоксу та додавання відображення напису з alt
 new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
 // Change code below this line

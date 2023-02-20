@@ -45,6 +45,15 @@ function initForm() {
 //  виведення об'єкта з полями і значеннями в консоль, очищення сховища і форми
 function onFeedBackFormSubmit(e) {
   e.preventDefault();
+
+  const {
+    elements: { email, message },
+  } = e.currentTarget;
+
+  if (!email.value || !message.value) {
+    return alert('Please fill in all the fields!');
+  }
+
   console.log(formData);
   localStorage.removeItem(LOCALSTORAGE_KEY);
   e.currentTarget.reset();
